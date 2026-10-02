@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeakUp Botswana - Home</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images.html/logo.png" alt="SpeakUp Botswana Logo">
+            <h1>SpeakUp Botswana</h1>
+        </div>
+
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="index.html" class="active">Home</a>
+                <a href="stories.html">Stories</a>
+                <a href="resources.html">Resources</a>
+                <a href="connect.html">Connect</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+           <div class="nav-right">
+    </button>
+    <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <form id="search-form" class="search-form-container hidden">
+        <input type="search" id="search-input" placeholder="Enter search term...">
+        <button type="submit" class="search-submit-btn" aria-label="Submit search">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </form>
+</div>
+              
+
+
+     
+<button class="mobile-menu-btn" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1 class="gradient-text">Breaking the Silence<br><span>Creating Safe Spaces</span></h1>
+                <p class="animated fade-in delay-1">Real voices, real courage. Hear how SpeakUp Botswana has helped survivors find safety and healing.</p>
+                <a href="stories.html" class="btn primary animated fade-in delay-2">
+                    <span>Read Their Stories</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="featured-story">
+            <div class="story-card animated">
+                <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+                <blockquote>
+                    "SpeakUp Botswana gave me the courage to reclaim my life."
+                    <cite>- Lerato, 29, Gaborone</cite>
+                </blockquote>
+                <div class="story-overlay">
+                    <div class="animated fade-in">
+                        <p>October 2024<br>Domestic abuse survivor</p>
+                       
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card animated">
+                <i class="fas fa-users"></i>
+                <h3>500+</h3>
+                <p>Survivors Empowered</p>
+            </div>
+            <div class="stat-card animated">
+                <i class="fas fa-comments"></i>
+                <h3>24/7</h3>
+                <p>Support Network</p>
+            </div>
+            <div class="stat-card animated">
+                <i class="fas fa-shield-alt"></i>
+                <h3>100%</h3>
+                <p>Confidential Assistance</p>
+            </div>
+        </section>
+
+        <div class="emergency-help">
+            <a href="tel:0800123456" class="emergency-btn">
+                <i class="fas fa-phone-alt"></i>
+                Emergency Help
+            </a>
+        </div>
+    </main>
+
+   <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resources.html">Emergency Contacts</a></li>
+          <li><a href="connect.html">Volunteer</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li><p><i class="fas fa-phone"></i> Support Line: 0800 132 654</p></li>
+          <li><p><i class="fas fa-envelope"></i> <a href="mailto:speakupbotswana@gmail.com">speakupbotswana@gmail.com</a></p></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/SpeakUpBotswana" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/SpeakUpBotswana" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/SpeakUpBotswana" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/SpeakUpBotswana" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 SpeakUp Botswana. All rights reserved.</p>
+    </div>
+  </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.navbar').classList.toggle('expanded');
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Initialize Dark Mode
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+        }
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animated').forEach(el => observer.observe(el));
+
+        // Story Card Hover Effect
+        document.querySelectorAll('.story-card').forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                this.style.setProperty('--mouse-x', `${x}px`);
+                this.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+
+    <script src="search.js"></script>
+</body>
+</html>

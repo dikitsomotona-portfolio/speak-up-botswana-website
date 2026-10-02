@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connect - SpeakUp Botswana</title>
+  <link rel="stylesheet" href="connect.css" />
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="images.html/logo.png" alt="SpeakUp Botswana Logo" />
+      <h1>SpeakUp Botswana</h1>
+    </div>
+
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="stories.html">Stories</a>
+        <a href="resources.html">Resources</a>
+        <a href="connect.html" class="active">Connect</a>
+        <a href="feedback.html">Feedback</a>
+      </div>
+
+      <div class="nav-right">
+        <button class="icon-btn search-btn" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <section class="hero-banner">
+      <div class="hero-content">
+      
+      </div>
+    </section>
+
+     <section class="connect-hero">
+    <div class="hero-content">
+      <h1>Get Involved</h1>
+      <p>Connect with us by sharing your story, volunteering, or partnering with SpeakUp Botswana.</p>
+    </div>
+  </section>
+
+  <div class="interaction-buttons">
+    <button onclick="toggleSection('storySection')">Share Your Story</button>
+    <button onclick="toggleSection('volunteerSection')">Volunteer</button>
+    <button onclick="toggleSection('partnerSection')">Partner With Us</button>
+  </div>
+
+  <!-- Share Your Story Section -->
+  <div id="storySection" class="form-section hidden">
+    <h3>Share Your Story</h3>
+    <form id="storyForm">
+      <label for="storyName">Your Name</label>
+      <input type="text" id="storyName" placeholder="Enter your name" required>
+
+      <label for="storyText">Your Story</label>
+      <textarea id="storyText" placeholder="Tell us your story..." rows="5" required></textarea>
+
+      <button type="submit">Submit Story</button>
+     <div id="storyMessage" style="display: none; color: rgb(0, 79, 128); margin-top: 10px;">
+    Thank you! Your story has been sent.
+</div>
+ 
+    </form>
+  </div>
+
+<script>
+  document.getElementById("storyForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // 
+    document.getElementById("storyMessage").style.display = "block"; // 
+    this.reset(); // 
+    setTimeout(() => {
+      document.getElementById("storyMessage").style.display = "none"; // 
+    }, 5000);
+  });
+</script>
+
+  <!-- Volunteer Section -->
+  <div id="volunteerSection" class="form-section hidden">
+    <h3>Volunteer with Us</h3>
+    <form id ="volunteerForm">
+      <label for="volunteerName">Your Name</label>
+      <input type="text" id="volunteerName" placeholder="Enter your name" required>
+
+      <label for="skills">Your Skills</label>
+      <input type="text" id="skills" placeholder="E.g., Counseling, Teaching">
+
+      <label for="availability">Availability</label>
+      <input type="text" id="availability" placeholder="E.g., Weekends, Evenings">
+
+      <button type="submit">Join Us</button>
+      <div id="volunteerMessage" style="display: none; color: rgb(0, 79, 128); margin-top: 10px;">
+    Thank you! Your volunteer request has been submitted.
+  </div>
+</form>
+    </form>
+  </div>
+
+<script>
+  document.getElementById("volunteerForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // 
+    document.getElementById("volunteerMessage").style.display = "block"; // 
+    this.reset(); // 
+    setTimeout(() => {
+      document.getElementById("volunteerMessage").style.display = "none"; // 
+    }, 5000)
+  });
+</script>
+
+  <!-- Partner Section -->
+  <div id="partnerSection" class="form-section hidden">
+    <h3>Partner With Us</h3>
+    <form id="partnerForm">
+      <label for="orgName">Organization Name</label>
+      <input type="text" id="orgName" placeholder="Enter your organization's name" required>
+
+      <label for="contactPerson">Contact Person</label>
+      <input type="text" id="contactPerson" placeholder="Who should we talk to?">
+
+      <label for="proposal">Partnership Proposal</label>
+      <textarea id="proposal" placeholder="Describe how you'd like to partner" rows="5"></textarea>
+
+      <button type="submit">Propose Partnership</button>
+     <div id="partnerMessage" style="display: none; color: rgb(0, 79, 128); margin-top: 10px;">
+    Thank you! Your partnership proposal has been submitted.
+  </div>
+</form> 
+    </form>
+  </div>
+
+  <script>
+  document.getElementById("partnerForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // 
+    document.getElementById("partnerMessage").style.display = "block"; // 
+    this.reset(); // 
+    setTimeout(() => {
+      document.getElementById("partnerMessage").style.display = "none"; // 
+    }, 5000)
+  });
+</script>
+
+ <section class="upcoming-events-section">
+  <h2>Upcoming Events</h2>
+  <div class="event-carousel" id="eventCarousel">
+    <div class="event-card fade-in">
+      <h3>Wellness Walk for Mental Health</h3>
+      <p>Join us for a peaceful walk to raise awareness on mental health.</p>
+      <p><strong>Location:</strong> Gaborone Main Mall</p>
+      <p><strong>Date:</strong> June 8, 2025</p>
+      <p><strong>Time:</strong> 08:00 AM - 12:00 PM</p>
+    </div>
+
+    <div class="event-card fade-in">
+      <h3>SpeakUp Creative Arts Festival</h3>
+      <p>Art, music, and storytelling to empower mental health advocacy.</p>
+      <p><strong>Location:</strong> Botswana Craft</p>
+      <p><strong>Date:</strong> July 13, 2025</p>
+      <p><strong>Time:</strong> 10:00 AM - 5:00 PM</p>
+    </div>
+
+    <div class="event-card fade-in">
+      <h3>Community Mental Health Workshop</h3>
+      <p>Interactive sessions on mental wellness and local support tools.</p>
+      <p><strong>Location:</strong> UB Library Auditorium</p>
+      <p><strong>Date:</strong> August 20, 2025</p>
+      <p><strong>Time:</strong> 1:00 PM - 4:00 PM</p>
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+
+    <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resources.html">Emergency Contacts</a></li>
+          <li><a href="connect.html">Volunteer</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li><p><i class="fas fa-phone"></i> Support Line: 0800 132 654</p></li>
+          <li><p><i class="fas fa-envelope"></i> <a href="mailto:speakupbotswana@gmail.com">speakupbotswana@gmail.com</a></p></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/SpeakUpBotswana" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/SpeakUpBotswana" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/SpeakUpBotswana" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/SpeakUpBotswana" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 SpeakUp Botswana. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const navbar = document.querySelector('.navbar');
+    document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+      navbar.classList.toggle('expanded');
+    });
+
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      themeToggle.querySelector('i').classList.toggle('fa-sun');
+      themeToggle.querySelector('i').classList.toggle('fa-moon');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+      themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+    }
+
+    // Tab switching
+    document.querySelectorAll('.option-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.option-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.option-content').forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Method switching
+    document.querySelectorAll('.method-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.method-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const method = btn.dataset.method;
+        document.getElementById('story-form').classList.toggle('hidden', method !== 'written');
+        document.getElementById('audio-recorder').classList.toggle('hidden', method !== 'audio');
+      });
+    });
+
+    // Word count
+    document.getElementById('story').addEventListener('input', function () {
+      const count = this.value.trim().split(/\s+/).filter(Boolean).length;
+      document.querySelector('.word-count').textContent = `${count}/2000 words`;
+    });
+
+   // Toggle form sections
+    function toggleSection(id) {
+      document.querySelectorAll('.form-section').forEach(section => {
+        if (section.id === id) {
+          section.classList.toggle('hidden');
+          if (!section.classList.contains('hidden')) {
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        } else {
+          section.classList.add('hidden');
+        }
+      });
+    }
+
+    // Simulated form submission
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        alert('Form submitted successfully!');
+        form.reset();
+      });
+    });
+
+
+    // Audio recording
+    let mediaRecorder;
+    let audioChunks = [];
+    const startBtn = document.getElementById('start-record');
+    const stopBtn = document.getElementById('stop-record');
+    const recordingStatus = document.getElementById('recording-status');
+    const audioPlayback = document.getElementById('audio-playback');
+    const submitAudioBtn = document.getElementById('submit-audio');
+
+    startBtn.addEventListener('click', async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        audioChunks = [];
+
+        mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+        mediaRecorder.onstop = () => {
+          const blob = new Blob(audioChunks, { type: 'audio/webm' });
+          const url = URL.createObjectURL(blob);
+          audioPlayback.src = url;
+          audioPlayback.classList.remove('hidden');
+          submitAudioBtn.classList.remove('hidden');
+        };
+
+        mediaRecorder.start();
+        startBtn.classList.add('hidden');
+        recordingStatus.classList.remove('hidden');
+      } catch (err) {
+        alert('Microphone access denied or unavailable.');
+        console.error(err);
+      }
+    });
+
+    stopBtn.addEventListener('click', () => {
+      mediaRecorder.stop();
+      recordingStatus.classList.add('hidden');
+      startBtn.classList.remove('hidden');
+    });
+
+    submitAudioBtn.addEventListener('click', () => {
+      alert('Audio submitted successfully!');
+      submitAudioBtn.classList.add('hidden');
+      audioPlayback.classList.add('hidden');
+    });
+   
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+  const navLeft = document.querySelector('.nav-left');
+  const navRight = document.querySelector('.nav-right');
+
+  menuBtn.addEventListener('click', () => {
+    navLeft.classList.toggle('show');
+    navRight.classList.toggle('show');
+  });
+
+    // Modal handling (optional future use)
+    const modal = document.getElementById('event-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+    const eventForm = document.getElementById('event-form');
+    const thankYou = document.getElementById('event-thankyou');
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      eventForm.classList.remove('hidden');
+      thankYou.classList.add('hidden');
+    });
+
+  function toggleSection(id) {
+    const sections = document.querySelectorAll('.form-section');
+    sections.forEach(section => {
+      if (section.id === id) {
+        section.classList.toggle('hidden');
+        if (!section.classList.contains('hidden')) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        section.classList.add('hidden');
+      }
+    });
+  }
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.event-card').forEach(card => {
+    observer.observe(card);
+  });
+
+ 
+
+
+    eventForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      eventForm.classList.add('hidden');
+      thankYou.classList.remove('hidden');
+    });
+
+ document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.event-card').forEach(card => {
+      observer.observe(card);
+    });
+  });
+
+ window.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.event-card');
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add('show');  // 
+    }, index * 150);               // 
+  });
+});
+
+
+
+  </script>
+</body>
+</html>

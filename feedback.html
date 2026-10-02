@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback - SpeakUp Botswana</title>
+  <link rel="stylesheet" href="feedback.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+</head>
+
+<body>
+  <!-- Header with Navbar -->
+  <header>
+    <div class="logo">
+      <img src="images.html/logo.png" alt="SpeakUp Botswana Logo" />
+      <h1>SpeakUp Botswana</h1>
+    </div>
+
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="stories.html">Stories</a>
+        <a href="resources.html">Resources</a>
+        <a href="connect.html">Connect</a>
+        <a href="feedback.html" class="active">Feedback</a>
+      </div>
+
+      <div class="nav-right">
+        <button class="icon-btn search-btn" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <section class="hero-banner">
+      <div class="hero-content animated fadeIn">
+        <h1>Your Feedback Matters</h1>
+        <p>Help us improve our services and support for survivors</p>
+      </div>
+    </section>
+
+    <section class="feedback-container">
+      <div class="feedback-intro animated fadeIn">
+        <h2><i class="fas fa-comment-alt"></i> Share Your Thoughts</h2>
+        <p>We value your experience with SpeakUp Botswana. Whether you're a survivor, supporter, or visitor, your feedback helps us grow.</p>
+      </div>
+
+      <div class="feedback-form-container animated fadeInUp">
+        <form id="feedback-form">
+          <div class="form-group">
+            <label for="feedback-type">Type of Feedback:</label>
+            <select id="feedback-type" name="feedback-type" required>
+              <option value="">Select one...</option>
+              <option value="general">General Feedback</option>
+              <option value="suggestion">Suggestion</option>
+              <option value="testimonial">Testimonial</option>
+              <option value="issue">Report an Issue</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="experience">How would you rate your experience?</label>
+            <div class="rating-container">
+              <div class="rating-stars">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5"><i class="fas fa-star"></i></label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4"><i class="fas fa-star"></i></label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3"><i class="fas fa-star"></i></label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2"><i class="fas fa-star"></i></label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1"><i class="fas fa-star"></i></label>
+              </div>
+              <div class="rating-labels">
+                <span>Poor</span>
+                <span>Excellent</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="feedback-message">Your Feedback:</label>
+            <textarea id="feedback-message" name="feedback-message" rows="6" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-preference">Can we contact you about this feedback?</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" id="contact-yes" name="contact-preference" value="yes" /> Yes</label>
+              <label><input type="checkbox" id="contact-no" name="contact-preference" value="no" /> No</label>
+            </div>
+          </div>
+
+          <div class="contact-info hidden" id="contact-info">
+            <div class="form-group">
+              <label for="contact-name">Name:</label>
+              <input type="text" id="contact-name" name="contact-name" />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email:</label>
+              <input type="email" id="contact-email" name="contact-email" />
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone (Optional):</label>
+              <input type="tel" id="contact-phone" name="contact-phone" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn primary">
+            <i class="fas fa-paper-plane"></i> Submit Feedback
+          </button>
+        </form>
+      </div>
+
+      <div class="feedback-thank-you hidden" id="thank-you">
+        <div class="thank-you-content">
+          <div class="checkmark">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h2>Thank You!</h2>
+          <p>Your feedback has been received. We appreciate you taking the time to help us improve.</p>
+          <button class="btn secondary" id="new-feedback">Submit Another Feedback</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="feedback-testimonials">
+      <h2>What People Are Saying</h2>
+      <div class="testimonial-slider">
+        <div class="testimonial active">
+          <div class="testimonial-content">
+            <p>"This platform helped me find the courage to leave my abusive relationship. The resources and stories gave me hope when I needed it most."</p>
+            <div class="testimonial-author">
+              <span class="author-name">Anonymous</span>
+              <span class="author-location">Gaborone</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>"As a counselor, I regularly recommend SpeakUp Botswana to my clients. The information is accurate and the support is compassionate."</p>
+            <div class="testimonial-author">
+              <span class="author-name">Dr. T. Masego</span>
+              <span class="author-location">Francistown</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-nav">
+          <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+          <div class="testimonial-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+          </div>
+          <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resources.html">Emergency Contacts</a></li>
+          <li><a href="connect.html">Volunteer</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <ul>
+          <li><p><i class="fas fa-phone"></i> Support Line: 0800 132 654</p></li>
+          <li><p><i class="fas fa-envelope"></i> <a href="mailto:speakupbotswana@gmail.com">speakupbotswana@gmail.com</a></p></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/SpeakUpBotswana" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/SpeakUpBotswana" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/SpeakUpBotswana" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/SpeakUpBotswana" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2025 SpeakUp Botswana. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Dark mode toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const icon = themeToggle.querySelector('i');
+      icon.classList.toggle('fa-sun');
+      icon.classList.toggle('fa-moon');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+      themeToggle.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+    }
+
+    // Animation triggers
+    const animatedElements = document.querySelectorAll('.animated');
+    const triggerAnimations = () => {
+      animatedElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.75) {
+          el.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', triggerAnimations);
+    document.addEventListener('DOMContentLoaded', triggerAnimations);
+
+    // Feedback form toggle
+    const contactYes = document.getElementById('contact-yes');
+    const contactNo = document.getElementById('contact-no');
+    const contactInfo = document.getElementById('contact-info');
+    const form = document.getElementById('feedback-form');
+    const thankYou = document.getElementById('thank-you');
+    const newFeedback = document.getElementById('new-feedback');
+
+    contactYes.addEventListener('change', () => {
+      contactNo.checked = false;
+      contactInfo.classList.remove('hidden');
+    });
+
+    contactNo.addEventListener('change', () => {
+      contactYes.checked = false;
+      contactInfo.classList.add('hidden');
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.classList.add('hidden');
+      thankYou.classList.remove('hidden');
+    });
+
+    newFeedback.addEventListener('click', () => {
+      form.reset();
+      contactInfo.classList.add('hidden');
+      form.classList.remove('hidden');
+      thankYou.classList.add('hidden');
+    });
+
+    // Testimonial slider
+    const testimonials = document.querySelectorAll('.testimonial');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.testimonial-prev');
+    const nextBtn = document.querySelector('.testimonial-next');
+    let current = 0;
+
+    function showTestimonial(index) {
+      testimonials.forEach(t => t.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      testimonials[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
+
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % testimonials.length;
+      showTestimonial(current);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(current);
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showTestimonial(index);
+      });
+    });
+  </script>
+</body>
+</html>

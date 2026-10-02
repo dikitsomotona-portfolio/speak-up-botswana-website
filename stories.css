@@ -1,0 +1,371 @@
+
+/* Global Styles */
+:root {
+   --primary-color: #8e44ad;
+    --secondary-color: #f39c12;
+    --light-color: #f8f8f8;
+    --dark-color: #2c3e50;
+    --accent-color: #ecf0f1;
+    --font-main: 'Poppins', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+}
+
+
+/* 1) Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f8f8;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* 2) Header & Logo */
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: rotate(-10deg);
+}
+
+.logo h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary-color);
+    padding: 12px 20px;
+}
+
+.nav-left {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-left a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-left a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-left a:hover::after,
+.nav-left a.active::after {
+    width: 100%;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+    background: rgba(255,255,255,0.15);
+    transform: rotate(15deg);
+}
+
+.register-btn {
+    background: white;
+    color: var(--primary-color);
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+/* Right-side buttons */
+.nav-right {
+  gap: 15px;
+}
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 5px;
+  transition: opacity 0.2s;
+}
+.icon-btn:hover {
+  opacity: 0.7;
+}
+.register-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #fff;
+  color: #8e44ad;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.register-btn:hover {
+  opacity: 0.8;
+}
+
+/* Mobile menu */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .nav-left,
+  .nav-right {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  nav.navbar.expanded .nav-left,
+  nav.navbar.expanded .nav-right {
+    display: flex;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+/* Hero Section */
+.connect-hero {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.connect-hero.stories-container {
+ max-width: 1200px;
+  margin: 0 auto;
+padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+}
+
+/* 5) Stories Section */
+.stories-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 20px;
+}
+.story-card {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.story-card.reverse-layout {
+  flex-direction: row-reverse;
+}
+.story-content {
+  flex: 1;
+  padding: 20px;
+}
+.story-content h3 {
+  color: #8e44ad;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.story-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+.story-meta span {
+  margin-right: 15px;
+}
+.story-image-large {
+  flex: 1;
+  min-width: 300px;
+  max-height: 300px;
+  overflow: hidden;
+}
+.story-image-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 6) Call to Action */
+.share-cta {
+  background: #8e44ad;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+.share-cta .btn {
+  background: #fff;
+  color: #8e44ad;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+.share-cta .btn:hover {
+  opacity: 0.8;
+}
+
+/* 7) Footer */
+footer {
+  background: var(--dark-color);
+  color: white;
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h3 {
+  border-bottom: 1px solid #555;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  font-family: var(--font-heading);
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--secondary-color);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+
+/* 8) Animations */
+.animated { animation-duration: 1s; animation-fill-mode: both; }
+.fadeIn { animation-name: fadeIn; }
+.fadeInUp { animation-name: fadeInUp; }
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 9) Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+body.dark-mode header { background: #1e1e1e; }
+body.dark-mode nav.navbar { background: #333; }
+body.dark-mode .story-card { background: #1e1e1e; }
+body.dark-mode .share-cta { background: #222; }
+body.dark-mode footer { background: #111; }

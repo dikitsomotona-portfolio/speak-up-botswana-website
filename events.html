@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Details & Registration</title>
+  <link rel="stylesheet" href="events.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="images.html/logo.png" alt="SpeakUp Botswana" />
+      <h1>SpeakUp Botswana</h1>
+    </div>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="stories.html" class="active">Stories</a>
+        <a href="resources.html">Resources</a>
+        <a href="connect.html"> Connect</a>
+         <a href="feedback.html">Feedback</a>
+    
+      </div>
+      <div class="nav-right">
+        <button class="icon-btn" aria-label="Search">&#128269;</button>
+        <a href="register.html" class="register-btn">Register</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="event-details-section">
+      <h2>Annual Youth Empowerment Conference 2025</h2>
+      <p class="event-date-location">
+        <strong>Date:</strong> June 15, 2025 &nbsp; | &nbsp; <strong>Location:</strong> Gaborone International Convention Centre
+      </p>
+      <img src="images.html/image (13).jpg" alt="Youth Empowerment Conference" class="event-image" />
+
+      <article class="event-description">
+        <h3>About This Event</h3>
+        <p>
+          Join us for a day of inspiration, education, and networking at the Annual Youth Empowerment Conference. 
+          This event features keynote speakers, breakout workshops, and interactive panels focused on leadership, innovation, and community development.
+        </p>
+        <p>
+          Whether you are a student, young professional, or community leader, this conference is designed to empower you with the skills and connections to make a difference.
+        </p>
+      </article>
+
+      <article class="event-schedule">
+        <h3>Event Schedule</h3>
+        <ul>
+          <li><strong>9:00 AM:</strong> Registration & Welcome Breakfast</li>
+          <li><strong>10:00 AM:</strong> Opening Keynote Address</li>
+          <li><strong>11:30 AM:</strong> Workshop Sessions</li>
+          <li><strong>1:00 PM:</strong> Networking Lunch</li>
+          <li><strong>2:30 PM:</strong> Panel Discussion</li>
+          <li><strong>4:00 PM:</strong> Closing Remarks & Awards</li>
+        </ul>
+      </article>
+
+      <section class="registration-section">
+        <h3>Register to Join</h3>
+        <form id="event-registration-form" action="#" method="POST">
+          <label for="full-name">Full Name *</label>
+          <input type="text" id="full-name" name="full-name" required placeholder="Your full name" />
+
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+267 7XX XXX XX" />
+
+          <label for="attendees">Number of Attendees *</label>
+          <select id="attendees" name="attendees" required>
+            <option value="" disabled selected>Select number</option>
+            <option value="1">1 (Just me)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4+">4 or more</option>
+          </select>
+
+          <button type="submit">Submit Registration</button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: info@speakupbotswana.org</p>
+        <p>Phone: +267 1234 5678</p>
+        <p>Address: Gaborone, Botswana</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+       <a href="index.html">Home</a><br />
+        <a href="stories.html" class="active">Stories</a><br />
+        <a href="connect.html">Connect</a><br />
+        <a href="resources.html">Resources</a>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <p>Facebook | Twitter | Instagram</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
